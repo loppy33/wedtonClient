@@ -13,10 +13,10 @@ const Layout = () => {
                     <li>
                         <Link to="/friends">Friends</Link>
                     </li>
-                </ul>
                     <li>
                         <Link to="/connectWallet">Connect Wallet</Link>
                     </li>
+                </ul>
             </nav>
         </>
     )
