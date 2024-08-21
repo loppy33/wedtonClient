@@ -1,0 +1,25 @@
+@import '../../styles/colors.module'
+
+.Layout
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100vh
+
+    nav
+        background-color: $footerMenu
+        padding: 10px 0
+        ul
+            display: flex
+            justify-content: space-evenly
+            li
+                a
+                    display: flex
+                    img
+                        width: 7vw
+                        filter: grayscale(100%)
+                        opacity: .5
+
+                .active img
+                    filter: grayscale(0%)
+                    opacity: 1

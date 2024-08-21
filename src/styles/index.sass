@@ -1,3 +1,5 @@
+@import './colors.module'
+  
 *
   margin: 0
   padding: 0
@@ -9,17 +11,18 @@
   font-weight: 400
 
   color-scheme: light dark
-  color: rgba(255, 255, 255, 0.87)
-  background-color: #242424
+  color: $textColor
+  background-color: #ebebeb
 
   font-synthesis: none
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+
 .container
   width: 90%
-  margin: auto
+  margin: 0 auto
 
 nav
   ul
