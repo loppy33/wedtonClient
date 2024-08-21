@@ -10,13 +10,16 @@ const Layout = () => {
                 <nav>
                     <ul className='container'>
                         {/* <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/" end>Home</Link>
+                        </li> */}
+                        {/* <li>
+                            <NavLink to="/friends" end><img src="icons/profile.svg" alt="" /></NavLink>
                         </li> */}
                         <li>
-                            <NavLink to="/tasks" end><img src="icons/clipboard.svg" alt="" /></NavLink>
+                            <NavLink to="/" end><img src="icons/profile.svg" alt="" /></NavLink>
                         </li>
                         <li>
-                            <NavLink to="/friends"><img src="icons/profile.svg" alt="" /></NavLink>
+                            <NavLink to="/tasks" ><img src="icons/clipboard.svg" alt="" /></NavLink>
                         </li>
                         <li>
                             <NavLink to="/connectWallet"><img src="icons/info.svg" alt="" /></NavLink>
