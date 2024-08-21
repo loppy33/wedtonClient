@@ -10,7 +10,7 @@ export default function ConnectWallet() {
                 <h2>LEVELLING UP</h2>
                 <p>Connect your wallet to access upcoming crypto features. Our team is working hard to bring them to you soon!</p>
             </div>
-            <TonConnectButton className='ton__button'/>
+            <TonConnectButton className='ton__button' />
         </div>
     )
 }
