@@ -2,12 +2,11 @@ import './ConnectWallet.sass'
 import {
     TonConnectButton,
     useTonAddress
-    // useTonConnectUI 
 } from '@tonconnect/ui-react';
 
 export default function ConnectWallet() {
-    // const [tonConnectUI] = useTonConnectUI();
     const userFriendlyAddress = useTonAddress();
+    // Может понадобится в будущем для сохранения в бд
     // const rawAddress = useTonAddress(false);
 
     return (
@@ -29,10 +28,6 @@ export default function ConnectWallet() {
                         </div>
                     </>
             }
-
-            {/* <button onClick={async () => {
-                await tonConnectUI.disconnect();
-            }}>test</button> */}
         </div>
     )
 }
