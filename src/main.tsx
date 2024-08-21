@@ -6,7 +6,7 @@ import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 createRoot(document.getElementById('root')!).render(
   <TonConnectUIProvider
-    manifestUrl="https://https://weedton-client.vercel.app//tonconnect-manifest.json"
+    manifestUrl="https://https://weedton-client.vercel.app/tonconnect-manifest.json"
     actionsConfiguration={{
       twaReturnUrl: 'https://t.me/keksyKiss_bot/myapptest'
     }}
