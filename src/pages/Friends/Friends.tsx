@@ -45,12 +45,14 @@ export default function Friends() {
         <div className="Friends container">
             <p>Score 10% from buddies + 2.5% from their referrals. <br /> Get a <img src="icons/ticket.png" alt="" /> play pass for each fren.</p>
             <h3>10 frens</h3>
-            <div className="friends__list">
-                {friendsData.map((friend, index) => (
-                    <Friend key={index} friend={friend} />
-                ))}
+            <div className="friends__container">
+                <div className="friends__list">
+                    {friendsData.map((friend, index) => (
+                        <Friend key={index} friend={friend} />
+                    ))}
+                </div>
+                <a href='#/' className="invite__button">Invite a fren</a>
             </div>
-            <a href='#/' className="invite__button">Invite a fren</a>
         </div>
     );
 }
