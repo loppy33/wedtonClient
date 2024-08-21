@@ -1,8 +1,15 @@
 import './ConnectWallet.sass'
-import { TonConnectButton } from '@tonconnect/ui-react';
-
+import {
+    TonConnectButton,
+    useTonAddress
+    // useTonConnectUI 
+} from '@tonconnect/ui-react';
 
 export default function ConnectWallet() {
+    // const [tonConnectUI] = useTonConnectUI();
+    const userFriendlyAddress = useTonAddress();
+    // const rawAddress = useTonAddress(false);
+
     return (
         <div className="ConnectWallet container">
             <div className="info__container">
@@ -10,7 +17,22 @@ export default function ConnectWallet() {
                 <h2>LEVELLING UP</h2>
                 <p>Connect your wallet to access upcoming crypto features. Our team is working hard to bring them to you soon!</p>
             </div>
-            <TonConnectButton className='ton__button' />
+            {
+                !userFriendlyAddress ?
+                    <>
+                        <TonConnectButton className='ton__button' />
+                    </>
+                    :
+                    <>
+                        <div className='ton__button connected'>
+                            <span>{userFriendlyAddress}</span>
+                        </div>
+                    </>
+            }
+
+            {/* <button onClick={async () => {
+                await tonConnectUI.disconnect();
+            }}>test</button> */}
         </div>
     )
 }
