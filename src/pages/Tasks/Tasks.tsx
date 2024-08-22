@@ -95,7 +95,7 @@ export default function Tasks() {
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
-            name: 'Nuka Cola', reward: 0.04,
+            name: 'Nuka Cola123', reward: 0.04,
             icon: '',
             rewardType: "DMT",
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
