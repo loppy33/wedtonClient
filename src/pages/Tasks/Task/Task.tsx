@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import './Task.sass'
 
 export default function Task() {
-    const { id } = useParams();
+    // const { id } = useParams();
     // Запрос в бд
 
     return (
