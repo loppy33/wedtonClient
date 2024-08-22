@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './Task.sass';
+import { useEffect } from 'react';
 
 export default function Task() {
     const tg = (window as any).Telegram.WebApp;
@@ -10,7 +11,9 @@ export default function Task() {
         navigate(-1); // Переход на предыдущую страницу
     };
 
-    tg.BackButton.onClick(goBack);
+    useEffect(() => {
+        tg.BackButton.onClick(goBack);
+    }, [])
     // const { id } = useParams();
     // Запрос в бд
 
