@@ -12,11 +12,18 @@ export default function Task() {
     };
 
     useEffect(() => {
+        // Показываем кнопку "Назад" в Telegram WebApp
+        tg.BackButton.show();
+
+        // Назначаем обработчик нажатия на кнопку "Назад"
         tg.BackButton.onClick(goBack);
-    }, [])
-    
-    // const { id } = useParams();
-    // Запрос в бд
+
+        // Очистка эффекта при размонтировании компонента
+        return () => {
+            tg.BackButton.offClick(goBack); // Убираем обработчик
+            tg.BackButton.hide(); // Скрываем кнопку "Назад"
+        };
+    }, []);
 
     return (
         <div className="Task container">
@@ -38,12 +45,11 @@ export default function Task() {
                 <p>This task has a limited number of winners who will receive a reward</p>
             </div>
             <ul>
-                <li >
+                <li>
                     <div>
                         <h3>1. Text</h3>
                         <p>text</p>
                     </div>
-                    {/* <a className='link' target='_blank' href="https://google.com">Start</a> */}
                     <img className='link' src="/icons/check.svg" alt="" />
                 </li>
                 <li>
