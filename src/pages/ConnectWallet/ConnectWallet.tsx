@@ -13,7 +13,7 @@ export default function ConnectWallet() {
         <div className="ConnectWallet container">
             <div className="info__container">
                 <img src="images/logo.png" alt="Unicorn logo" />
-                <h2>LEVELLING UP</h2>
+                <h1>LEVELLING UP</h1>
                 <p>Connect your wallet to access upcoming crypto features. Our team is working hard to bring them to you soon!</p>
             </div>
             {

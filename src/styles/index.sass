@@ -1,4 +1,9 @@
 @import './colors.module'
+@import './height.module'
+
+@font-face
+  font-family: 'Urban'
+  src: url('fonts/urban.ttf')
 
 *
   margin: 0
@@ -51,9 +56,8 @@ html, body
   height: 90%
   margin: 0 auto
 
-nav
-  ul
-    list-style: none
+ul
+  list-style: none
 
 a
   text-decoration: none
@@ -107,3 +111,16 @@ a
           color: $secondTextColor
           vertical-align: middle
           display: flex
+
+h1
+  font-family: Urban
+  font-size: 20px
+  font-weight: 400
+
+.title
+  padding-top: 20px
+  height: $titleHeight
+  text-align: center
+  h1
+    text-align: center
+    padding-bottom: 10px

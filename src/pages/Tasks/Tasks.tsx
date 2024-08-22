@@ -1,7 +1,9 @@
 import { useState } from "react"
 import './Tasks.sass'
+import { Link } from "react-router-dom";
 
 interface TaskData {
+    id: number;
     name: string;
     icon: string;
     reward: number;
@@ -25,7 +27,7 @@ function Avatar({ icon }: { icon: string }) {
 
 function Task({ task }: { task: TaskData }) {
     return (
-        <a href="/tasks/1" className="info">
+        <Link to={"/task/" + task.id}  className="info">
             <Avatar icon={task.icon} />
             <div className="details">
                 <div className="left">
@@ -34,7 +36,7 @@ function Task({ task }: { task: TaskData }) {
                 </div>
                 <div className="bp"><img src="icons/arrow.svg" alt="" /></div>
             </div>
-        </a>
+        </Link>
     );
 }
 
@@ -44,31 +46,15 @@ export default function Tasks() {
 
     const taskData: TaskData[] = [
         {
-            name: 'Nuka Cola', reward: 0.04,
+            id: 1,
+            name: 'Nuka Cola', 
+            reward: 0.04,
             icon: '',
             rewardType: "DMT",
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
-            name: 'Nuka Cola', reward: 0.04,
-            icon: '',
-
-            rewardType: "DMT",
-            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
-        },
-        {
-            name: 'Nuka Cola', reward: 0.04,
-            icon: '',
-            rewardType: "DMT",
-            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
-        },
-        {
-            name: 'Nuka Cola', reward: 0.04,
-            icon: '',
-            rewardType: "DMT",
-            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
-        },
-        {
+            id: 2,
             name: 'Nuka Cola', reward: 0.04,
             icon: '',
 
@@ -76,18 +62,21 @@ export default function Tasks() {
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
+            id: 3,
             name: 'Nuka Cola', reward: 0.04,
             icon: '',
             rewardType: "DMT",
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
+            id: 4,
             name: 'Nuka Cola', reward: 0.04,
             icon: '',
             rewardType: "DMT",
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
+            id: 5,
             name: 'Nuka Cola', reward: 0.04,
             icon: '',
 
@@ -95,6 +84,29 @@ export default function Tasks() {
             tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
         },
         {
+            id: 5,
+            name: 'Nuka Cola', reward: 0.04,
+            icon: '',
+            rewardType: "DMT",
+            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
+        },
+        {
+            id: 5,
+            name: 'Nuka Cola', reward: 0.04,
+            icon: '',
+            rewardType: "DMT",
+            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
+        },
+        {
+            id: 5,
+            name: 'Nuka Cola', reward: 0.04,
+            icon: '',
+
+            rewardType: "DMT",
+            tasks: [{ description: 'Sub tg channel for exmpl', link: 'https://google.com' }]
+        },
+        {
+            id: 5,
             name: 'Nuka Cola123', reward: 0.04,
             icon: '',
             rewardType: "DMT",

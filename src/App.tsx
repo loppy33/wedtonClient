@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout";
 import Friends from "./pages/Friends/Friends";
 import ConnectWallet from "./pages/ConnectWallet/ConnectWallet";
 import Tasks from "./pages/Tasks/Tasks";
+import Task from "./pages/Tasks/Task/Task";
 
 export default function App() {
   return (
@@ -13,8 +14,9 @@ export default function App() {
           {/* <Route index element={<Home />} /> */}
           {/* <Route path="friends" element={<Friends />} /> */}
           <Route index element={<Friends />} />
-          <Route path="tasks" element={<Tasks />} />
-          <Route path="connectWallet" element={<ConnectWallet />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/task/:id" element={<Task/>} />
+          <Route path="/connectWallet" element={<ConnectWallet />} />
 
         </Route>
       </Routes>
