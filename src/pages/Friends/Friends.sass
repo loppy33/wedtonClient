@@ -15,53 +15,27 @@
         font-size: 18px
         margin: 20px 0
 
-    .friends__container
-        display: flex
-        flex-direction: column
-        justify-content: space-between
+    .list__container
+
         height: 77%
 
-    .friends__list
+    .list
         max-height: 60vh
-        overflow: scroll
-        display: flex
-        flex-direction: column
         gap: 3vh
 
-        .friend
-            border-top: 1px solid $friendsBorderColor
-            display: flex
-            align-items: center
-            padding: 1vw 3vw
-
+        .info
             .avatar
                 background-color: $avatarColor
-                width: 50px
-                height: 40px
-                border-radius: 6px
 
-                display: flex
-                justify-content: center
-                align-items: center
-                font-size: 16px
-                color: #fff
-
-            .friend__details
-                width: 100%
-                display: flex
-                justify-content: space-between
-                align-items: center
-                padding: 0 5vw
-                font-weight: 600
-
+            .details
                 span
                     img
                         vertical-align: middle
                         width: 5vw
                         filter: grayscale(100%)
 
-                .friend__bp
-                    color: $moneyColor
+                .bp
+                    color: $secondTextColor
 
     .invite__button
         @include button-styles()

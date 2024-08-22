@@ -17,14 +17,14 @@ function Avatar({ name }: { name: string }) {
 
 function Friend({ friend }: { friend: FriendData }) {
     return (
-        <div className="friend">
+        <div className="info">
             <Avatar name={friend.name} />
-            <div className="friend__details">
+            <div className="details">
                 <div className="left">
-                    <div className="friend__name">{friend.name}</div>
+                    <div className="name">{friend.name}</div>
                     <span><img src="icons/profile.svg" alt="" /> + 10</span>
                 </div>
-                <div className="friend__bp">{friend.bp.toLocaleString('en-US')} BP</div>
+                <div className="bp">{friend.bp.toLocaleString('en-US')} BP</div>
             </div>
         </div>
     );
@@ -45,8 +45,8 @@ export default function Friends() {
         <div className="Friends container">
             <p>Score 10% from buddies + 2.5% from their referrals. <br /> Get a <img src="icons/ticket.png" alt="" /> play pass for each fren.</p>
             <h3>10 frens</h3>
-            <div className="friends__container">
-                <div className="friends__list">
+            <div className="list__container">
+                <div className="list">
                     {friendsData.map((friend, index) => (
                         <Friend key={index} friend={friend} />
                     ))}
