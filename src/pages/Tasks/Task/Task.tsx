@@ -1,7 +1,16 @@
-// import { useParams } from 'react-router-dom';
-import './Task.sass'
+import { useNavigate } from 'react-router-dom';
+import './Task.sass';
 
 export default function Task() {
+    const tg = (window as any).Telegram.WebApp;
+    const navigate = useNavigate();
+
+    // Функция для возврата назад
+    const goBack = () => {
+        navigate(-1); // Переход на предыдущую страницу
+    };
+
+    tg.BackButton.onClick(goBack);
     // const { id } = useParams();
     // Запрос в бд
 
