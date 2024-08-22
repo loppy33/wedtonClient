@@ -14,6 +14,7 @@ export default function Task() {
     useEffect(() => {
         tg.BackButton.onClick(goBack);
     }, [])
+    
     // const { id } = useParams();
     // Запрос в бд
 
