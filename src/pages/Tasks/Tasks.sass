@@ -1,10 +1,10 @@
 @import '../../styles/colors.module'
+@import '../../styles/height.module'
 
 .Tasks
     .title
         padding-top: 20px
-        height: 20vh
-        background-color:blue
+        height: $titleHeight
         h1
             text-align: center
             font-size: 20px
@@ -36,7 +36,7 @@
             .active
                 background-color: #ECF6F3
     .list__container
-        height: calc( 100vh - 30vh )
+        height: calc( 100vh - $titleHeight + $footerHeight )
         .list
             .info
                 .avatar

@@ -38,7 +38,7 @@ export default function Friends() {
         { name: 'OyVeyLaVey', friendInvited: 10, bp: 89923 },
         { name: 'sonicx123', friendInvited: 10, bp: 89923 },
         { name: 'OyVeyLaVey', friendInvited: 10, bp: 89923 },
-        { name: 'OyVeyLaVey', friendInvited: 10, bp: 89923 }
+        { name: 'OyVeyLaVey123', friendInvited: 10, bp: 89923 }
     ];
 
     return (
