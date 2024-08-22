@@ -129,10 +129,12 @@ export default function Tasks() {
 
     return (
         <div className="Tasks container">
-            <h1>TASKS</h1>
-            <div className="choice__container">
-                <span onClick={() => setTaskType('daily')} className={tasksType === 'daily' ? 'active' : ''}>Daily</span>
-                <span onClick={() => setTaskType('main')} className={tasksType === 'main' ? 'active' : ''}>Main</span>
+            <div className="title">
+                <h1>TASKS</h1>
+                <div className="choice__container">
+                    <span onClick={() => setTaskType('daily')} className={tasksType === 'daily' ? 'active' : ''}>Daily</span>
+                    <span onClick={() => setTaskType('main')} className={tasksType === 'main' ? 'active' : ''}>Main</span>
+                </div>
             </div>
             <div className="list__container">
                 {tasksRender()}
