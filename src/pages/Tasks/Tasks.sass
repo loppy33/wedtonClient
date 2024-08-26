@@ -1,6 +1,6 @@
 @import '../../styles/colors.module'
 @import '../../styles/height.module'
-
+@import '../../styles/button.module'
 .Tasks
 
     .choice__container
@@ -38,3 +38,49 @@
                     .left
                         span
                             font-weight: 400
+
+    .daily__container
+        text-align: center
+        height: calc( 80vh - $titleHeight + $footerHeight )
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        .rewards
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: center
+            gap: 0 5px
+
+            .day
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 80px
+                // height: 80px
+                padding: 10px 0
+                gap: 5px
+                margin-bottom: 15px
+
+                border: 1px solid $dailyBorderColor
+                background-color: $dailyBgColor
+                border-radius: 12px
+                line-height: 10px
+                h3
+                    font-size: 14px
+                    color: $secondTextColor
+                    font-weight: 400
+
+                img
+                    width: 40%
+
+                span
+                    color: $thirdTextColor
+                    font-size: 14px
+                    font-weight: 400
+
+        button
+            @include button-styles()
+            font-size: 20px
+            margin-bottom: 4vw

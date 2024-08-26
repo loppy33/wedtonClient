@@ -27,7 +27,7 @@ function Avatar({ icon }: { icon: string }) {
 
 function Task({ task }: { task: TaskData }) {
     return (
-        <Link to={"/task/" + task.id}  className="info">
+        <Link to={"/task/" + task.id} className="info">
             <Avatar icon={task.icon} />
             <div className="details">
                 <div className="left">
@@ -47,7 +47,7 @@ export default function Tasks() {
     const taskData: TaskData[] = [
         {
             id: 1,
-            name: 'Nuka Cola', 
+            name: 'Nuka Cola',
             reward: 0.04,
             icon: '',
             rewardType: "DMT",
@@ -114,22 +114,37 @@ export default function Tasks() {
         },
     ];
 
+    const dailyRewards = [0.1, 0.3, 0.5, 0.8, 1.2, 1.7, 2.3, 3, 3.8, 5]
 
     const tasksRender = () => {
         switch (tasksType) {
             case 'daily':
                 return (
-                    <div className="list">
-                        {taskData.map((task, index) => (
-                            <Task key={index} task={task} />
-                        ))}
+                    <div className="daily__container">
+                        {/* <h1>DAILY REWARDS</h1>
+                        <img src="icons/calendar.svg" alt="" />
+                        <p>Accrue coins for logging into the game daily
+                        without skipping</p> */}
+                        <div className="rewards">
+                            {dailyRewards.map((reward, index) => (
+                                <div className="day" key={index}>
+                                    <h3>Day {index + 1}</h3>
+                                    <img src='icons/weedCoin.svg' alt='' />
+                                    <span>{reward}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <button>Claim</button>
                     </div>
                 )
-
             case 'main':
                 return (
-                    <div className="list">
-
+                    <div className="list__container">
+                        <div className="list">
+                            {taskData.map((task, index) => (
+                                <Task key={index} task={task} />
+                            ))}
+                        </div>
                     </div>
                 )
 
@@ -148,9 +163,7 @@ export default function Tasks() {
                     <span onClick={() => setTaskType('main')} className={tasksType === 'main' ? 'active' : ''}>Main</span>
                 </div>
             </div>
-            <div className="list__container">
-                {tasksRender()}
-            </div>
+            {tasksRender()}
         </div>
     )
 }
