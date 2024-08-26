@@ -67,6 +67,11 @@
                 background-color: $dailyBgColor
                 border-radius: 12px
                 line-height: 10px
+
+                &.active
+                    background-color: $dailyActiveColor
+                    border: 1px solid $thirdTextColor
+
                 h3
                     font-size: 14px
                     color: $secondTextColor
@@ -84,3 +89,7 @@
             @include button-styles()
             font-size: 20px
             margin-bottom: 4vw
+            transition: .3s
+
+            &.disabled
+                opacity: .5

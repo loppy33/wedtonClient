@@ -43,6 +43,7 @@ function Task({ task }: { task: TaskData }) {
 
 export default function Tasks() {
     const [tasksType, setTaskType] = useState<string>('daily')
+    const [dailyClaim, setDailyCalim] = useState<boolean>(true)
 
     const taskData: TaskData[] = [
         {
@@ -127,14 +128,14 @@ export default function Tasks() {
                         without skipping</p> */}
                         <div className="rewards">
                             {dailyRewards.map((reward, index) => (
-                                <div className="day" key={index}>
+                                <div className={index == 0 ? "day active" : "day" } key={index}>
                                     <h3>Day {index + 1}</h3>
                                     <img src='icons/weedCoin.svg' alt='' />
                                     <span>{reward}</span>
                                 </div>
                             ))}
                         </div>
-                        <button>Claim</button>
+                        <button onClick={() => setDailyCalim(!dailyClaim)} className={!dailyClaim ? "disabled" : ""}>Claim</button>
                     </div>
                 )
             case 'main':
