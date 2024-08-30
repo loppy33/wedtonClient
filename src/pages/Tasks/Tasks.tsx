@@ -122,10 +122,6 @@ export default function Tasks() {
             case 'daily':
                 return (
                     <div className="daily__container">
-                        {/* <h1>DAILY REWARDS</h1>
-                        <img src="icons/calendar.svg" alt="" />
-                        <p>Accrue coins for logging into the game daily
-                        without skipping</p> */}
                         <div className="rewards">
                             {dailyRewards.map((reward, index) => (
                                 <div className={index == 0 ? "day active" : "day" } key={index}>
@@ -148,7 +144,6 @@ export default function Tasks() {
                         </div>
                     </div>
                 )
-
 
             default:
                 return null
