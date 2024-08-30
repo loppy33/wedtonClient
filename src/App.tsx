@@ -23,17 +23,17 @@ export default function App() {
       // Добавляем класс hidden с задержкой
       const hideTimer = setTimeout(() => {
         setHiddenIndices((prev) => [...prev, index]);
-      }, 1500);
+        // Удаляем уведомление через 0.3 секунды после добавления класса hidden
+        setTimeout(() => {
+          setNotify((prevNotify) => prevNotify.filter((_, i) => i !== 0));
+          setHiddenIndices([]);
+        }, 300); // 0.3 секунды на анимацию скрытия
+      }, 1000);
 
-      // Удаляем уведомление через 0.3 секунды после добавления класса hidden
-      const removeTimer = setTimeout(() => {
-        setNotify((prevNotify) => prevNotify.filter((_, i) => i !== 0));
-        setHiddenIndices([]);
-      }, 1600); // 0.3 секунды на анимацию скрытия
 
       return () => {
         clearTimeout(hideTimer);
-        clearTimeout(removeTimer);
+        // clearTimeout(removeTimer);
       };
     }
   }, [notify, hiddenIndices]);
