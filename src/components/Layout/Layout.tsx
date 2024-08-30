@@ -1,67 +1,20 @@
-import { TouchEvent, useEffect, useRef, useState } from 'react';
 import './Layout.sass';
 import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { IProps } from "./layout.type"
 
-const Layout = () => {
+const Layout: React.FC<IProps> = ({ notify, hiddenIndices }) => {
     const location = useLocation();
     const isTaskPage = location.pathname.startsWith('/task/');
-
-    const [isVisible, setIsVisible] = useState(true);
-    const [isSwiping, setIsSwiping] = useState(false);
-    const [diffX, setDiffX] = useState(0)
-    const startX = useRef(0);
-
-    // useEffect(() => {
-    //     if ()
-    // }, [isVisible])
-
-    // Обработчик начала касания
-    const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
-        startX.current = e.touches[0].clientX;
-    };
-
-    const handleTouchEnd = () => {
-        if (diffX <= 50 || diffX >= -50) {
-
-            setDiffX(0);
-        }
-    };
-
-    // Обработчик движения касания
-    const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
-        const currentX = e.touches[0].clientX;
-        setDiffX((currentX - startX.current) / 3);
-        console.log(diffX);
-
-
-        if (diffX >= 50 || diffX <= -50) {
-            if (diffX >= 50) {
-                setDiffX(150)
-            } else {
-                setDiffX(-150)
-            }
-            setIsSwiping(true);
-
-            console.log("swipe");
-
-        }
-    };
-
 
     return (
         <>
             <div className="Layout">
-                <div
-                    className="notifies"
-                >
-                    <div
-                        className={`notify ${isSwiping ? 'hidden' : ''}`}
-                        onTouchStart={handleTouchStart}
-                        onTouchMove={handleTouchMove}
-                        onTouchEnd={handleTouchEnd}
-                        style={{ transform: 'translateX(' + diffX + '%)' }}>
-                        Message for user example
-                    </div>
+                <div className="notifies">
+                {/* <div className={`notify 1`}>Message 0</div> */}
+                    {notify.map((message, index) => (
+                        <div key={index} className={`notify ${hiddenIndices.includes(index) ? 'hidden' : ''}`}>{message}</div>
+                    ))}
+
                 </div>
                 <Outlet />
                 {!isTaskPage && (

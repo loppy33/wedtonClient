@@ -9,25 +9,39 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const [notify, setNotify] = useState<string[]>([]);
+  const [hiddenIndices, setHiddenIndices] = useState<number[]>([]);
 
+  // Инициализируем уведомления
   useEffect(() => {
     setNotify(['Message 1', 'Message 2', 'Message 3']);
   }, []);
 
   useEffect(() => {
-    if (notify.length > 0) {
-      const timer = setTimeout(() => {
-        setNotify((prevNotify) => prevNotify.slice(1));
-      }, 3000); 
+    if (notify.length > 0 && hiddenIndices.length < notify.length) {
+      const index = hiddenIndices.length;
 
-      return () => clearTimeout(timer);
+      // Добавляем класс hidden с задержкой
+      const hideTimer = setTimeout(() => {
+        setHiddenIndices((prev) => [...prev, index]);
+      }, 1500);
+
+      // Удаляем уведомление через 0.3 секунды после добавления класса hidden
+      const removeTimer = setTimeout(() => {
+        setNotify((prevNotify) => prevNotify.filter((_, i) => i !== 0));
+        setHiddenIndices([]);
+      }, 1600); // 0.3 секунды на анимацию скрытия
+
+      return () => {
+        clearTimeout(hideTimer);
+        clearTimeout(removeTimer);
+      };
     }
-  }, [notify]);
+  }, [notify, hiddenIndices]);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout notify={notify} hiddenIndices={hiddenIndices} />}>
           {/* <Route index element={<Home />} /> */}
           {/* <Route path="friends" element={<Friends />} /> */}
           <Route index element={<Friends />} />
